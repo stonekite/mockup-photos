@@ -43,7 +43,7 @@ const draw = (
     blurRadius,
     blurRadius,
     targetRectWidth - 2 * blurRadius,
-    targetRectHeight - 2 * blurRadiu
+    targetRectHeight - 2 * blurRadius
   ).data;
 
   const intermediateCanvas = document.createElement("canvas");
