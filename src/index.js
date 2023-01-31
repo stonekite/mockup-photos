@@ -1,9 +1,12 @@
-import { h } from "preact";
-/** @jsx h */
 import habitat from "preact-habitat";
 import Widget from "./Widget";
+import css from "./style.css";
 
-let _habitat = habitat(Widget);
+const stylesheet = document.createElement("style");
+stylesheet.innerHTML = css;
+document.head.appendChild(stylesheet);
+
+const _habitat = habitat(Widget);
 
 _habitat.render({
   selector: '[data-widget-host="habitat"]',

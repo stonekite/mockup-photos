@@ -1,0 +1,208 @@
+* {
+  box-sizing: border-box;
+}
+
+*[data-widget-host="habitat"] {
+  --color-1: #FFF;
+  --color-2: #3E9300;
+  background-color: #D1D1D1;
+  padding: 3rem;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dropzone-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dropzone {
+  width: 48%;
+  height: 20rem;
+  padding: 1rem;
+  color: #FFF;
+  border: 4px dashed var(--color-1, #FFF);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.preview {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 2%;
+  row-gap: 2rem;
+}
+
+.preview:not(:first-child) {
+  padding-top: 2rem;
+  border-top: 4px dashed #FFF;
+}
+
+.preview .dynamic-img-container {
+  width: 15%;
+  padding-bottom: 15%;
+}
+
+.preview-dropzone {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 2%;
+  overflow-y: auto;
+}
+
+.preview-dropzone .dynamic-img-container {
+  width: 15%;
+  padding-bottom: 15%;
+}
+
+.dynamic-img-container {
+  position: relative;
+  cursor: zoom-in;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFF;
+}
+
+.dynamic-img-container .wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.dynamic-img-container img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    object-fit: contain;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.dynamic-img-container .controls {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.dynamic-img-container .controls button {
+  all: unset;
+  cursor: pointer;
+  padding: 0.1rem 0.4rem;
+  margin: 0.2rem;
+  border-radius: 0.2rem;;
+}
+
+.dynamic-img-container .controls button {
+  background-color: var(--color-4, #FF0);
+}
+
+.dynamic-img-container .controls button:first-child {
+  background-color: var(--color-5, #F00);
+  color: #FFF;
+  position: absolute;
+  right: 0;
+}
+
+.dynamic-img-container:hover .controls {
+  display: unset;
+}
+
+.dynamic-img-modal {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 1000;
+  cursor: zoom-out;
+}
+
+.dynamic-img-modal img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.inputs-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 2rem 0;
+  height: 4rem;
+  gap: 1.3%;
+}
+
+.inputs-container .input {
+  background-color: #FFF;
+  font-size: 1.5rem;
+  height: 100%;
+  width: 11%;
+  min-width: 7em;
+  border: 0;
+  border-radius: 4rem;
+  cursor: pointer;
+  transition: opacity 0.5s;
+}
+
+.inputs-container .input.hidden {
+  opacity: 0;
+  cursor: unset;
+}
+
+.inputs-container .price {
+  position: relative;
+  text-align: center;
+}
+
+.inputs-container .price:after{
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  content: '$';
+}
+
+.progress-bar {
+  opacity: 0;
+  height: 50%;
+  width: 48%;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  margin-right: auto;
+  display: flex;
+  overflow: hidden;
+  transition: opacity 0.5s;
+  background-color: #A0A0A0;
+}
+
+.progress-bar-block {
+  height: 100%;
+  width: 0%;
+  max-width: 100%;
+  background-color: var(--color-2, #0F0);
+  transition: width 0.2s;
+}
+
+.progress-bar-block:last-child {
+  background-color: var(--color-3, #F00);
+}

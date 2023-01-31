@@ -5,15 +5,14 @@
 		<title>mockup-photos</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<style>
-			.preview {
+			.preview-widget {
 				width: 100%;
-				max-width: 1100px;
-				margin: 80px auto;
+				margin: 30px 0 0;
 				border: 1px dashed rgba(0, 0, 0, 0.2);
 				position: relative;
 			}
 
-			.preview::before {
+			.preview-widget::before {
 				content: 'WIDGET PREVIEW';
 				position: absolute;
 				display: block;
@@ -22,12 +21,14 @@
 				color: rgba(0, 0, 0, 0.5);
 			}
 		</style>
+		<% preact.headEnd %>
 	</head>
-	<body>
-		<div data-widget-host="habitat" class="preview">
+	<body data-widget-host="habitat">
+		<div class="preview-widget">
 			<script type="text/props">
-			  { "color": "red"}
+			  { "color": "red" }
 			</script>
 		</div>
+		<% preact.bodyEnd %>
 	</body>
 </html>

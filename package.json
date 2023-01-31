@@ -8,7 +8,7 @@
   "umd:main": "dist/index.umd.js",
   "scripts": {
     "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider preact watch",
-    "build:widget": "microbundle build -i src/index.js -f modern --external none --alias react=preact/compat --define process.env.NODE_ENV='production'",
+    "build:widget": "microbundle build -i src/index.js -f iife --external none --css inline --alias react=preact/compat --define process.env.NODE_ENV='production' --sourcemap false",
     "build:lib": "microbundle build -i src/component.js",
     "lint": "eslint '{src,test}/**/*.js'",
     "test": "jest",
@@ -49,6 +49,7 @@
     ]
   },
   "dependencies": {
+    "jszip": "^3.10.1",
     "react-dropzone": "^14.2.3"
   }
 }
